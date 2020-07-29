@@ -4,10 +4,10 @@
 
 [![NuGet](https://img.shields.io/badge/NuGet-v1.1.4-blue.svg)](https://www.nuget.org/packages/MobPush/)
 
-**[MobPush API for C#](http://wiki.mob.com/mobpush-rest-api-接口文档/)** 
-为了帮助开发者更方便接入MobPush免费推送SDK，提供完整的API接口的java实现，包含设备操作相关接口、推送操作相关接口以及公共接口。
+**[MobPush API for C#](https://www.mob.com/wiki/detailed?wiki=MobPushRestAPIfenlei1333&id=136)** 
+为了帮助开发者更方便接入MobPush免费推送SDK，提供完整的API接口的C#实现，包含设备操作相关接口、推送操作相关接口以及公共接口。
 
-了解更多 [MobPush 免费推送SDK.](http://mobpush.mob.com)
+了解更多 [MobPush 免费推送SDK.](https://www.mob.com/mobService/mobpush)
 
 
 ## 优势
@@ -57,14 +57,13 @@
  
 # 使用注意事项
 * 初始化appkey、appSecret
-```Java
+```C#
    MobPushConfig.appkey = "";
    MobPushConfig.appSecret = "";
 ```
-以上是使用时设置的方式，还可以直接引用源码在mob.push.api.MobPushConfig设置
 
 * 错误码请参考 
-  [MobPush Api 错误码](http://wiki.mob.com/mobpush-rest-api-接口文档/#map-6)
+  [MobPush Api 错误码](https://www.mob.com/wiki/detailed/?wiki=chuowuma111&id=136)
 
 
 
