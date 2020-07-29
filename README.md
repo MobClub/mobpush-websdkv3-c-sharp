@@ -2,6 +2,8 @@
 
 ![image](https://github.com/MOBX/MOB-SMS-WEBAPI/blob/master/doc/images/logo.png)
 
+[![NuGet](https://img.shields.io/badge/NuGet-v1.1.4-blue.svg)](https://www.nuget.org/packages/MobPush/)
+
 **[MobPush API for C#](http://wiki.mob.com/mobpush-rest-api-接口文档/)** 
 为了帮助开发者更方便接入MobPush免费推送SDK，提供完整的API接口的java实现，包含设备操作相关接口、推送操作相关接口以及公共接口。
 
@@ -42,7 +44,7 @@
 # 使用方式
 
 * ## NuGet
-    Nuget地址
+    [MobPush](https://www.nuget.org/packages/MobPush/)
 
 * ## 源码编译
     需要MobPush.dll
