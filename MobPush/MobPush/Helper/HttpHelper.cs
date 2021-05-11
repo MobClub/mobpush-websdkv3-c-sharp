@@ -89,7 +89,7 @@ namespace MobPush.Helper
                     {
                         httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                     }
-
+                    client.Timeout = TimeSpan.FromSeconds(timeOut);
                     HttpResponseMessage response = await client.PostAsync(MobPushConfig.baseUrl + url, httpContent);
                     var result = await response.Content.ReadAsStringAsync();
                     return result;

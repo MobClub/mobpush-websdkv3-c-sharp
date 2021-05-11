@@ -1,11 +1,11 @@
 ﻿using MobPush.Builder;
-using MobPush.Config;
 using MobPush.Helper;
 using MobPush.Model;
 using MobPush.Res;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MobPush.Client.Push
 {
@@ -18,9 +18,29 @@ namespace MobPush.Client.Push
         public const string REPLACE_TASK_URI = "/push/replace";
         public const string RECALL_TASK_URI = "/push/recall";
 
-        public static Result<PushV3Res> pushTaskV3(MobPush.Model.Push push)
+        public static Result<PushV3Res> pushTaskV3(Model.Push push)
         {
             string postResult = HttpHelper.PostObject(PUSH_URI, push);
+            try
+            {
+                Result<PushV3Res> result = JsonConvert.DeserializeObject<Result<PushV3Res>>(postResult);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// add async pushTaskV3 
+        /// </summary>
+        /// <param name="push"></param>
+        /// <returns></returns>
+        public static async Task<Result<PushV3Res>> pushTaskV3Async(Model.Push push)
+        {
+            string postResult = await HttpHelper.PostObjectAsync(PUSH_URI, push);
             try
             {
                 Result<PushV3Res> result = JsonConvert.DeserializeObject<Result<PushV3Res>>(postResult);
@@ -118,6 +138,7 @@ namespace MobPush.Client.Push
         /**
          * 只能获取到3天之内的任务，长时间的任务请使用 getPushByBatchId 方法获取
          */
+
         public static Result<PushTaskV3Res> getPushByWorkno(string workno)
         {
             return GetPushTask(workno, 2);
